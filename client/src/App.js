@@ -1,4 +1,5 @@
 import Paths from './routes/Paths';
+import './styles/global.scss'
 
 function App() {
   return (

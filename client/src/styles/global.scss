@@ -1,0 +1,47 @@
+@import "_vars";
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0; 
+    font-family: 'Roboto', sans-serif;}
+html{
+    font-size: 62.5%;
+}
+.display-none{
+    display: none !important;
+}
+.display{
+    display: inline-block;
+}
+.hide{
+    visibility: hidden;
+}
+.flex-col{
+    display: flex;
+    flex-direction: column;
+}
+.flex-row{
+    display: flex;
+    flex-direction: row;
+}
+.center-center{
+    justify-content: center;
+    align-items: center;
+}
+
+.input{
+    border-radius: 0.5rem;
+    border: 1px solid gray;
+    padding: 0.5rem;
+}
+.txt-link{
+    color:$blue-link;
+    cursor: pointer;
+}
+.blue-btn{
+    border-radius: 0.5rem;
+    background-color: $blue-btn;
+    border: 0.2rem solid $blue-btn;
+    color: $white;
+    padding: 0.6rem;
+}
