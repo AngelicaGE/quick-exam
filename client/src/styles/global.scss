@@ -39,9 +39,15 @@ html{
     cursor: pointer;
 }
 .blue-btn{
+    cursor:pointer;
     border-radius: 0.5rem;
     background-color: $blue-btn;
     border: 0.2rem solid $blue-btn;
     color: $white;
     padding: 0.6rem;
+}
+.blue-btn:hover{
+    background-color: $white;
+    border: 0.2rem solid $blue-btn;
+    color: $blue-btn;
 }
