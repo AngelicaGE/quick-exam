@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import useGetClients from '../hooks/useGetClients';
-
+import { ENDPOINT } from '../helpers/globalVars';
 
 const ClientPage = () => {
-    let API = `http://localhost:3005/clients`; 
+    let API = `${ENDPOINT}/clients`; 
 
 const {clients, loading, error} = useGetClients(API);
 

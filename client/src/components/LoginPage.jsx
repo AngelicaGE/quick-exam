@@ -1,6 +1,9 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useContext} from 'react'
 import '../styles/LoginPage.scss'
 import logo from '../rsc/images/logo.PNG'
+import { UserContext } from "../context/UserContext";
+import { SUC, FAIL } from '../helpers/globalVars';
+
 
 const formUser = [
     {
@@ -15,12 +18,16 @@ const formUser = [
     }
   ];
 
+  const inputsUser = {
+    femail: "",
+    fpassword: "",
+  };
+
 const LoginPage = () => {
     const [formFields, setFormFields] = useState([]);
-    const [formFieldsInputs, setFormFieldsInputs] = useState([]);
-    const [errorMessage, setErrorMessage] = useState(
-        "Please fill out every input form"
-      );
+    const [formFieldsInputs, setFormFieldsInputs] = useState(inputsUser);
+    const [errorMessage, setErrorMessage] = useState("");
+    const { signIn } = useContext(UserContext);
 
   useEffect(() => {
     setFormFields(formUser);
@@ -28,11 +35,40 @@ const LoginPage = () => {
   }, [])
       
   const onChange = (event) => {
+    setErrorMessage("");
+
     setFormFieldsInputs({
       ...formFieldsInputs,
       [event.target.name]: event.target.value,
     });
   };
+
+  const formIsValid = () => {
+    let isValid = true;
+    console.log("validating")
+    Object.entries(formFieldsInputs).forEach(([key, value]) => {
+        console.log(value)
+      if (value === "") {
+        isValid = false;
+        setErrorMessage("Please fill out every input form");
+      }
+    });
+    return isValid;
+  };
+
+  const login = async () =>{
+      if (formIsValid()) {
+        const res = await signIn(formFieldsInputs.femail, formFieldsInputs.fpassword);
+
+        if(res.status == SUC){
+            alert("welcome back")
+        }else{
+            res.message? setErrorMessage(res.message): setErrorMessage("Something went wrong, please try again")
+        }
+      }
+
+  }
+
 
   return (
     <div className='LoginPage '>
@@ -40,6 +76,7 @@ const LoginPage = () => {
             <img src={logo} alt="logo" />
             <h1 className='welcome txt'><strong>Welcome back</strong></h1>
             <h4 className='details txt'>Please enter your details.</h4>
+            <p className='txt-error'>{errorMessage}</p>
             {formFields.map((input) => (
               <input
                 className="form-group input"
@@ -53,16 +90,17 @@ const LoginPage = () => {
                 onChange={onChange}
                 name={input.name}
                 placeholder={input.placeholder}
+                required
               />
             ))}  
             <div className='form-remember flex-row'>
                 <div className='check-group flex-row'>
-                    <input type="checkbox"/> &nbsp;
-                    <label for="cbox2">Remember for 30 days</label> &nbsp;
+                    <input id="cbox2" type="checkbox"/> &nbsp;
+                    <label htmlFor="cbox2">Remember for 30 days</label> &nbsp;
                 </div>
                 <p className='txt-link'>Forgot password</p>    
             </div>
-            <button className='blue-btn'>Sign in</button>
+            <button className='blue-btn' onClick={() => login()}>Sign in</button>
             <div className='form-sign-up flex-row center-center'>
                 <p>Don't have an account? </p>&nbsp;<p className='sign-up txt-link'> Sign up</p>
             </div>
