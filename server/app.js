@@ -1,7 +1,6 @@
 const mongoose = require('mongoose')
 const url = 'mongodb://localhost/db_quickExam'
 
-
 mongoose.connect(url, {})
 
 const db = mongoose.connection

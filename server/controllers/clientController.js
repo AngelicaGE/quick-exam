@@ -10,7 +10,7 @@ module.exports = {
                 })
             }
             console.log(clients)
-            return res.json({length: 3, recordset:clients});
+            return res.json({length: clients.length, recordset:clients});
             
         })
     }
