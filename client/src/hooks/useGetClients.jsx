@@ -7,12 +7,8 @@ const useGetClients =  (API) => {
 
     useEffect(() => {
       async function getAllClients(){
-        console.log("use effect")
         try{
           const response = await fetch(API);
-          console.log("RESPONSE: ")
-          console.log(response)
-          console.log("RESPONSE.JSON(): ")
 
           const data = await response.json();
           console.log(data)
