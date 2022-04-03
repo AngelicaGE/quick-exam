@@ -43,7 +43,6 @@ const ClientsContainer = () => {
   }
 
   const handleTagChangeFiltering = (tags) =>{
-      console.log(tags)
       if(tags.length <= 0){
             handleSearch(search)
             return

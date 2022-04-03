@@ -25,13 +25,16 @@ export const UserProvider = ({children}) => {
 
     const getLogedInUser = async (email) => {
         // there is no user logged in
+        console.log(useLocalStorage)
         if(userLocalStorage === null) return res = {status: SUC, user: null} ;
         // User is already set on variable (meaning user hasnt refreshed the page so ots still saved in user state var)
+        console.log(user)
         if (user !== null) return res = {status: SUC, user: user} ;;
 
         try{
             const response = await fetch(`${ENDPOINT}/user/${email}`);
             const data = await response.json();
+            console.log(data)
             setUser(data.recordset[0])
             return res = {status: SUC, user: data.recordset[0]} ;
           }catch(error){
@@ -42,7 +45,6 @@ export const UserProvider = ({children}) => {
     const signOut =  () => {
         setUser(null)
         setUserLocalStorage(null)
-        alert("goodbye")
     };
 
     const signIn = async (email, password) => {
@@ -52,7 +54,7 @@ export const UserProvider = ({children}) => {
                 res = {status: FAIL, message: "There is no user with this email"}
             }else if(password == user.password){
                 setUser(user);
-                setUserLocalStorage(user._id)
+                setUserLocalStorage(user)
                 res = {status: SUC}
             }else{
                 res = {status: FAIL, message: "Username or password are incorrect"}

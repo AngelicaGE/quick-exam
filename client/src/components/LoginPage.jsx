@@ -64,7 +64,7 @@ const LoginPage = () => {
 
         if(res.status == SUC){
             alert("welcome back")
-            navigate("/clients");
+            navigate("/Dashboard");
         }else{
             res.message? setErrorMessage(res.message): setErrorMessage("Something went wrong, please try again")
         }

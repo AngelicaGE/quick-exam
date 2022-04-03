@@ -44,6 +44,9 @@ html{
     color:$blue-link;
     cursor: pointer;
 }
+.txt-error{
+    color: rgb(190, 21, 21);
+}
 .blue-btn{
     cursor:pointer;
     border-radius: $border-round;
@@ -57,8 +60,10 @@ html{
     border: 0.2rem solid $blue-btn;
     color: $blue-btn;
 }
-.txt-error{
-    color: rgb(190, 21, 21);
+.btn{
+    padding: 0.6rem;
+    cursor:pointer;
+    border-radius: $border-round;
 }
 .light-blue-btn{
     background-color: $light-blue;

@@ -1,7 +1,9 @@
 import React from 'react'
 
-export const NavbarMobile = () => {
+export const NavbarMobile = ({tabs, user, signOut}) => {
   return (
-    <div className='NavbarMobile'></div>
+    <div className='NavbarMobile'>
+        MOBILE NAVBAR
+    </div>
   )
 }

@@ -12,6 +12,8 @@
 
 /*Navbar Browser begin*/
 .NavbarBrowser{
+    width: 100%;
+    justify-content: space-between;
 }
 .NavbarBrowser a{
     color: black;
@@ -24,7 +26,15 @@
     align-items: center;
     height: 100%;
 }
-
+.nav-user{
+}
+.nav-user .btn{
+    margin-right: 1rem;
+    border: none;
+    background-color: transparent;
+    color: gray;
+    font-weight: bold;
+}
 /*Navbar Browser end*/
 
 

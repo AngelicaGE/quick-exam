@@ -1,9 +1,10 @@
 import React from 'react'
 import {Link, NavLink } from 'react-router-dom'
 
-const NavbarBrowser = ({tabs}) => {
+const NavbarBrowser = ({tabs, user, signOut }) => {
+
   return (
-    <div className='NavbarBrowser'>
+    <div className='NavbarBrowser flex-row'>
         <div className='navbar-links'>
         {
             tabs.map((tab) => (
@@ -15,7 +16,19 @@ const NavbarBrowser = ({tabs}) => {
             ))
         }
         </div>
-
+        {
+            user?
+            <div className='nav-user'>
+                Hi {user.email}! &nbsp; <button className='blue-btn' onClick={() => signOut()}> Sign out</button>
+            </div>
+            : 
+            <div className='nav-user'>
+                <NavLink to="/login" className='btn'>
+                        Log In
+                </NavLink> 
+                <button className='blue-btn'>Sign Up</button>
+            </div>
+        }
     </div>
   )
 }

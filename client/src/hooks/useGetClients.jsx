@@ -11,7 +11,7 @@ const useGetClients =  (API) => {
           const response = await fetch(API);
 
           const data = await response.json();
-          console.log(data)
+          //console.log(data)
 
           setClients(data.recordset);
         }catch(error){
