@@ -4,7 +4,8 @@ import { ENDPOINT } from "../helpers/globalVars";
 import useGetClients from "../hooks/useGetClients";
 import ClientsTableList from "./ClientsTableList";
 import HorLinesIcon from "../rsc/icons/hor-lines.PNG";
-import { filters } from "../helpers/globalVars.js";
+//import { filters } from "../helpers/globalVars.js";
+import {getClientFields} from '../helpers/promises.js'
 
 const API = `${ENDPOINT}/clients`;
 
@@ -14,15 +15,26 @@ const ClientsContainer = () => {
   const [isFilterActive, setIsFilterActive] = useState(false);
   const [tags, setTags] = useState([])
   const [filteredClients, setFilteredClients] = useState(clients)
-// my memoization
+  const [filters, setFilters] = useState([])
   const [search, setSearch] = useState('');
 
   useEffect(() => {
+
+    async function fetchFields(){
+      let res = await getClientFields();
+      console.log(res)
+      setFilters(res)
+  }
+  fetchFields();
+
+
     setFilteredClients(clients)
+
   }, [clients])
 
   useEffect(() => {
     handleTagChangeFiltering(tags);
+
   }, [tags])
   
 
