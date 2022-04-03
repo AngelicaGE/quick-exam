@@ -35,13 +35,11 @@ const ClientsContainer = () => {
     let filteredTags = tags.filter(tag => tag.title !== event.target.placeholder);
     filteredTags.push(newTag)
     setTags(filteredTags)
-    console.log(filteredTags)   
   }
 
   const removeTag = (title) =>{
     let filteredTags = tags.filter(tag => tag.title !== title);
     setTags(filteredTags)
-    console.log(filteredTags)   
   }
 
   const handleTagChangeFiltering = (tags) =>{
@@ -53,13 +51,11 @@ const ClientsContainer = () => {
     let newclients=clients;
     tags.forEach(tag => {
         newclients=newclients.filter((client) => {
-            console.log(client)
             return (
                 client[String(tag.field)].toLowerCase().includes(tag.value.toLowerCase())
             );
         })
     });
-    console.log(newclients)
     setFilteredClients(newclients)
   }
 
@@ -134,7 +130,7 @@ const ClientsContainer = () => {
           ""
         )}
       </div>
-      <ClientsTableList clients={filteredClients}></ClientsTableList>
+      <ClientsTableList clients={filteredClients} setClients={setFilteredClients}></ClientsTableList>
     </div>
   );
 };

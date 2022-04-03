@@ -6,7 +6,7 @@ import ArrowDownIcon from "../rsc/icons/arrow-down.PNG";
 import ArrowLeftIcon from "../rsc/icons/arrow-left.PNG";
 import ArrowRightIcon from "../rsc/icons/arrow-right.PNG";
 
-const ClientsTableList = ({ clients }) => {
+const ClientsTableList = ({ clients, setClients }) => {
   const [isBiggerThanPhone, setIsBiggerThanPhone] = useState(false);
 
   useEffect(() => {
@@ -16,20 +16,34 @@ const ClientsTableList = ({ clients }) => {
     }
   }, []);
 
+  const orderBy = (field) =>{
+    let sortClients = [...clients].sort(function (a, b) {
+        if (a[String(field)] > b[String(field)]) {
+          return 1;
+        }
+        if (a[String(field)] < b[String(field)]) {
+          return -1;
+        }
+        return 0;
+      });
+    console.log(sortClients)
+    setClients(sortClients)
+  }
+
   return (
     <div className="ClientsTableList">
       <table>
         <thead>
           <tr>
-            <th>
+            <th className="sort-field" onClick={()=> orderBy("name")}>
               Cliente <img src={ArrowDownIcon} alt="arrow down" />
             </th>
-            <th>Género</th>
+            <th className="sort-field" onClick={()=> orderBy("gender")}>Género</th>
             {
                 isBiggerThanPhone?
                 <>
-                    <th>País</th>
-                    <th>Estado</th>
+                    <th className="sort-field" onClick={()=> orderBy("country")}>País</th>
+                    <th className="sort-field" onClick={()=> orderBy("state")}>Estado</th>
                     <th></th>
                 </>: ''
             }

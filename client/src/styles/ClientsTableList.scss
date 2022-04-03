@@ -22,6 +22,9 @@ thead{ color: $gray;}
     padding: 0.5rem;
     display: inline-block;
 }
+.sort-field{
+    cursor: pointer;
+}
 
 table {
     border-collapse: separate;
