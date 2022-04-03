@@ -1,12 +1,15 @@
 import {createContext, useEffect } from "react";
 import { useState } from "react";
-import { ENDPOINT, SUC, FAIL } from '../helpers/globalVars';
+import { ENDPOINT, SUC, FAIL, USER_KEY } from '../helpers/globalVars';
+import useLocalStorage from "../hooks/useLocalStorage";
 
 export const UserContext = createContext();
 
 
 export const UserProvider = ({children}) => {
     const [user, setUser] = useState(null)
+    const [userLocalStorage, setUserLocalStorage] = useLocalStorage(USER_KEY, null);
+
 
     let res;
 
@@ -24,6 +27,8 @@ export const UserProvider = ({children}) => {
 
     const signOut =  () => {
         setUser(null)
+        setUserLocalStorage(null)
+        alert("goodbye")
     };
 
     const signIn = async (email, password) => {
@@ -33,6 +38,7 @@ export const UserProvider = ({children}) => {
                 res = {status: FAIL, message: "There is no user with this email"}
             }else if(password == user.password){
                 setUser(user);
+                setUserLocalStorage(user._id)
                 res = {status: SUC}
             }else{
                 res = {status: FAIL, message: "Username or password are incorrect"}
@@ -46,6 +52,8 @@ export const UserProvider = ({children}) => {
     return (
         <UserContext.Provider 
             value={{
+                user,
+                userLocalStorage,
                 signIn, 
                 signOut
                 }}>

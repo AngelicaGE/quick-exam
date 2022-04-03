@@ -3,6 +3,7 @@ import '../styles/LoginPage.scss'
 import logo from '../rsc/images/logo.PNG'
 import { UserContext } from "../context/UserContext";
 import { SUC, FAIL } from '../helpers/globalVars';
+import { useNavigate } from "react-router-dom";
 
 
 const formUser = [
@@ -56,12 +57,14 @@ const LoginPage = () => {
     return isValid;
   };
 
+  let navigate = useNavigate();
   const login = async () =>{
       if (formIsValid()) {
         const res = await signIn(formFieldsInputs.femail, formFieldsInputs.fpassword);
 
         if(res.status == SUC){
             alert("welcome back")
+            navigate("/clients");
         }else{
             res.message? setErrorMessage(res.message): setErrorMessage("Something went wrong, please try again")
         }

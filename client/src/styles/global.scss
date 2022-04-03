@@ -28,9 +28,15 @@ html{
     justify-content: center;
     align-items: center;
 }
+.center-vert{
+    align-items: center;
+}
+.justify-left{
+    justify-content: flex-start;
+}
 
 .input{
-    border-radius: 0.5rem;
+    border-radius: $border-round;
     border: 1px solid gray;
     padding: 0.5rem;
 }
@@ -40,7 +46,7 @@ html{
 }
 .blue-btn{
     cursor:pointer;
-    border-radius: 0.5rem;
+    border-radius: $border-round;
     background-color: $blue-btn;
     border: 0.2rem solid $blue-btn;
     color: $white;
@@ -52,5 +58,12 @@ html{
     color: $blue-btn;
 }
 .txt-error{
-    color: rgb(150, 21, 21);
+    color: rgb(190, 21, 21);
+}
+.light-blue-btn{
+    background-color: $white;
+    border: 0.2rem solid $blue-btn;
+    color: $blue-btn;
+    border-radius: $border-round;
+    padding: 0.6rem;
 }

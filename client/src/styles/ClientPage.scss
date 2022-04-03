@@ -1,0 +1,91 @@
+@import '_vars';
+
+.ClientsContainer .filters-cont{
+    max-width: $max-width;
+}
+
+/*** Filters begin ***/
+.create-btn p{
+    display: inline-block;
+}
+.ClientsContainer .create-btn{
+   padding-top: 0rem !important;
+   padding-bottom: 0rem !important;
+}
+.filters-and-search-cont{
+    display: inline-block;
+    justify-content: space-between;
+}
+
+.ClientsContainer .filter-selector::placeholder{
+    color: black;
+}
+.ClientsContainer .option,
+.ClientsContainer .datalist{
+    color: black !important;
+    background-color: $white !important;
+}
+.filter-selector-cont{
+    margin-right: 1rem;
+    margin-top: 2rem;
+}
+.filters-and-search-cont input{
+    margin-right: 1rem;
+    padding-bottom: 0.3rem;
+}
+.tag p{
+    display: inline-block;
+}
+.tag{
+    margin: 0 0.5rem;
+}
+/*** Filters end ***/
+
+@media(min-width:300px){
+    .ClientsContainer .filters-cont{
+        margin: auto 2rem;
+    }
+    .ClientsTableList, .ClientsTableList {
+        margin: auto 2rem;
+    }
+
+    .ClientsTableList thead img{
+        width: 1rem;
+    }
+    .ClientsTableList .profile-img{
+        width: 3rem;
+    }
+    .ClientsTableList .delete-img{
+        width: 2rem;
+    }
+    table tr th:first-child{
+        width: 60%;
+    }
+ }
+@media(min-width:1024px){
+    .ClientsContainer .filters-cont, .ClientsTableList{
+        margin: auto;
+    }
+    table {
+        border-collapse: separate;
+        border-spacing: 0;
+        //min-width: 350px;
+        //box-shadow: 0 0 0 1px gray; 
+    }
+    .ClientsTableList table{
+        margin-top: 3rem;
+        //min-width: $max-width;
+    }
+    .ClientsTableList thead img{
+        width: 1rem;
+    }
+    .ClientsTableList .profile-img{
+        width: 3rem;
+    }
+    .ClientsTableList .delete-img{
+        width: 2rem;
+    }
+    table tr th:first-child{
+        width: 60%;
+    }
+ }
