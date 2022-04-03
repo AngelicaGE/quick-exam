@@ -61,9 +61,12 @@ html{
     color: rgb(190, 21, 21);
 }
 .light-blue-btn{
-    background-color: $white;
-    border: 0.2rem solid $blue-btn;
-    color: $blue-btn;
+    background-color: $light-blue;
+    border: none;
+    color: $blue-btn !important;
     border-radius: $border-round;
     padding: 0.6rem;
+}
+a{
+    text-decoration: none;
 }

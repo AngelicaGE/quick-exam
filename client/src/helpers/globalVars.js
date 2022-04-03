@@ -12,3 +12,14 @@ export const filters = [
      {title: 'País', options: countries, field: "country"},
       {title: 'Estado', options: states, field: "state"}
 ]
+
+export const navOptions = [
+      "Home",
+      "Dashboard",
+      "Projects",
+      "Tasks",
+      "Reporting",
+      "Users"
+
+
+]

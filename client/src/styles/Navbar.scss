@@ -1,0 +1,49 @@
+@import '_vars';
+
+.Navbar{
+    margin-bottom: 2rem;
+}
+
+.nav-content{
+    max-width: $max-width;
+    margin: auto;
+    padding: 0.5rem 0;
+}
+
+/*Navbar Browser begin*/
+.NavbarBrowser{
+}
+.NavbarBrowser a{
+    color: black;
+    font-size: medium;
+    margin: auto 0.5rem ;
+}
+.navbar-links{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+}
+
+/*Navbar Browser end*/
+
+
+
+@media(min-width:300px){
+    .nav-content .logo{
+        width: 8rem;
+        margin-left: 2rem;
+    }
+}
+
+@media(min-width:800px){
+    .nav-content .logo{
+        width: 15rem;
+        margin-right: 1.5rem;
+    }
+}
+@media(min-width:1024px){
+    .nav-content .logo{
+        margin-left: 0;
+    }
+}

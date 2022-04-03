@@ -1,8 +1,9 @@
-import React, { useState, useEffect, useContext } from 'react'
+import React, {useContext } from 'react'
 import '../styles/ClientPage.scss'
 import { UserContext } from "../context/UserContext";
 import ErrorPage from './ErrorPage';
 import ClientsContainer from './ClientsContainer';
+import NavbarContainer from './NavbarContainer';
 
 const ClientPage = () => {
 const {userLocalStorage} = useContext(UserContext);
@@ -16,6 +17,7 @@ if (!userLocalStorage){
 
   return (
     <div className='ClientPage'>
+        <NavbarContainer></NavbarContainer>
         <ClientsContainer></ClientsContainer>
     </div>
   )
