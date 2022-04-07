@@ -10,3 +10,10 @@ export const  getClientFields = async() => {
     
         return data
 } 
+
+
+export const  allMetrics = [
+        {title: 'Objects completed', metric: '400+'},
+        {title: 'Return on investment', metric: '600%'},
+        {title: 'Global Downloads', metric: '10k'},
+]
