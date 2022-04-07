@@ -4,6 +4,7 @@
     margin: auto;
 }
 
+/////////LANDING MAIN STARTS
 .demo-btn{
     background-color: white;
     color: black;
@@ -11,16 +12,21 @@
 .left-upper .subtitle{
     color: gray;
 }
-.right-lower{
-    background-color: aqua;
-    height: 50rem;
+.gray-bg{
+    background-color: gainsboro;
+    max-width: 50rem;
+    min-width: 40rem;
+    border-top-left-radius: 50%;
+    border-top-right-radius:50%;
 }
+/////////LANDING MAIN ENDS
+
 
 @media(min-width:300px){
+/////////LANDING MAIN STARTS
     .left-upper{
         margin: 0 1rem;
     }
-
     .demo-btn img{
         width: 2rem;
     }
@@ -44,17 +50,34 @@
     .demo-btns button{
         margin: 0.5rem 0;
     }
-    // FONT SIZES BEGIN
+    .gray-bg{
+        height: 30rem;
+        margin-left: -3.5rem;
+        position: relative;
+        margin-top: 8rem;
+    }
+    .gray-bg img{
+        position: absolute;
+    bottom: 0;
+    width: 20rem;
+    left: calc(50% - 10rem);
+    }
+    // ** font size begin
     .LandingMain .title{
         font-size: 3rem;
+        margin-top: 4rem;
     }
     .LandingMain .subtitle{
         font-size:larger;
         margin: 2rem 0;
     }
+
+/////////LANDING MAIN STARTS
+
 }
 
 @media(min-width:768px){
+/////////LANDING MAIN STARTS
     .LandingMain{
         display: flex;
         flex-direction: row;
@@ -88,10 +111,26 @@
     .review-container img {
         width: 70%;
     }
-
-    
+    .gray-bg img{
+        position: absolute;
+        max-width: 16rem;
+        bottom: 0;
+        right: calc(50% - 8rem);
+    }
+    .gray-bg{
+        height: 100%;
+        margin: auto;
+        margin-right: 0;
+        display: flex;
+        justify-content: center;
+        flex-wrap: nowrap;
+        align-content: flex-end;
+        position: relative;
+    }
+/////////LANDING MAIN ENDS
 }
 @media(min-width:1024px){
+/////////LANDING MAIN STARTS
     .demo-btn img {
         width: 2rem;
     }
@@ -99,6 +138,13 @@
         width: 50%;
         margin: 2rem 0
     }
+    .gray-bg img{
+        position: absolute;
+        max-width: 20rem;
+        bottom: 0;
+        right: calc(50% - 10rem);
+    }
+
     //FONT SIZES BEGIN
     .LandingMain .title{
         font-size: xxx-large;
@@ -107,4 +153,5 @@
         font-size: medium;
         margin: 2rem 0;
     }
+/////////LANDING MAIN ENDS
 }

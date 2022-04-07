@@ -1,7 +1,8 @@
 import React from "react";
-import "../styles/Landing.scss";
+import "../styles/LandingMain.scss";
 import PlayIcon from "../rsc/icons/play.PNG";
 import RateElement from "../rsc/images/rate.PNG";
+import PhoneImg from "../rsc/images/phone.jpg";
 
 const LandingMain = () => {
   return (
@@ -26,7 +27,13 @@ const LandingMain = () => {
           </div>
         </div>
       </div>
-      <div className="right-lower">.</div>
+      <div className="right-lower">
+          <div className="gray-bg">
+              <div>
+              <img src={PhoneImg} alt="" />
+              </div>
+          </div>
+      </div>
     </div>
   );
 };
