@@ -1,0 +1,110 @@
+@import '_vars';
+.LandingMain{
+    max-width: $max-width;
+    margin: auto;
+}
+
+.demo-btn{
+    background-color: white;
+    color: black;
+}
+.left-upper .subtitle{
+    color: gray;
+}
+.right-lower{
+    background-color: aqua;
+    height: 50rem;
+}
+
+@media(min-width:300px){
+    .left-upper{
+        margin: 0 1rem;
+    }
+
+    .demo-btn img{
+        width: 2rem;
+    }
+    .review-container img{
+        width: 100%;
+    }
+    .subtitle{
+        margin: 1rem 0;
+    }
+    .demo-btns{
+        display: flex;
+        flex-direction: column;
+    }
+    .demo-btn{
+        order: 1;
+    }
+    .review-container{
+        width: 100%;
+        margin: 2rem 0;
+    }
+    .demo-btns button{
+        margin: 0.5rem 0;
+    }
+    // FONT SIZES BEGIN
+    .LandingMain .title{
+        font-size: 3rem;
+    }
+    .LandingMain .subtitle{
+        font-size:larger;
+        margin: 2rem 0;
+    }
+}
+
+@media(min-width:768px){
+    .LandingMain{
+        display: flex;
+        flex-direction: row;
+    }
+    .LandingMain .left-upper,
+    .LandingMain .right-lower{
+        width: 50%;
+        margin: 0 1rem;
+    }
+    .LandingMain .left-upper{
+        width: 40%;
+    }
+    .LandingMain .right-lower{
+        width: 60%;
+    }
+    .demo-btns{
+        display: flex;
+        flex-direction: row;
+    }
+    .demo-btns button{
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    .demo-btns .demo-btn{
+        order: 0;
+        margin-right: 2rem;
+    }
+    .LandingMain button img{
+        margin-right: 0.3rem;
+    }
+    .review-container img {
+        width: 70%;
+    }
+
+    
+}
+@media(min-width:1024px){
+    .demo-btn img {
+        width: 2rem;
+    }
+    .review-container img {
+        width: 50%;
+        margin: 2rem 0
+    }
+    //FONT SIZES BEGIN
+    .LandingMain .title{
+        font-size: xxx-large;
+    }
+    .LandingMain .subtitle{
+        font-size: medium;
+        margin: 2rem 0;
+    }
+}
