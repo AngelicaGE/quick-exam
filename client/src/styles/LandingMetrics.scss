@@ -1,4 +1,5 @@
 @import '_vars';
+
 .LandingMetrics{
     max-width: $max-width;
     margin: auto;
@@ -53,7 +54,10 @@
 }
 
 @media(min-width:1024px){
-    .LandingMain .subtitle{
+    .LandingMetrics .upper .subtitle{
         font-size: medium;
+    }
+    .LandingMetrics .upper .title{
+        font-size: 2.8rem;
     }
 }
