@@ -8,7 +8,7 @@ const LandingMain = () => {
   return (
     <div className="LandingMain">
       <div className="left-upper">
-        <h1 className="title">Zero Hassle Push to Talk conversations</h1>
+        <h1 className="title"><b>Zero Hassle Push to Talk conversations</b></h1>
         <p className="subtitle">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
           sollicitudin, nulla et ullamcorper sagittis, lacus ante mollis est,

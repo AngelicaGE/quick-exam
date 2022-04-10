@@ -1,0 +1,106 @@
+@import '_vars';
+
+.LandingTestimonies{
+    max-width: $max-width;
+    margin: auto;
+}
+.arrows button{
+    background-color: $white;
+    border-radius: 50%;
+    padding: 0.6rem;
+    border: 0.5px solid rgba(128, 128, 128, 0.57);
+}
+.LandingTestimonies .right-lower img{
+    width: 100%;
+}
+@media(min-width:300px){
+    .left-upper{
+        margin: 0 1rem;
+    }
+    .user img{
+        width: 3.5rem;
+        margin-right:0.7rem ;
+    }
+    .user-arrows-cont{
+        display: flex;
+        flex-direction: column;
+    }
+    .LandingTestimonies .user p{
+        font-size: larger;
+        margin: 0.2rem 0;
+    }
+    .arrows img{
+        width: 2rem;
+    }
+    .arrows button:first-child{
+        margin-right: 2rem;
+    }
+    .arrows{
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .stars img{
+        width: 8rem;
+    }
+    .stars{
+        margin-bottom: 3rem;
+    }
+    .LandingTestimonies .title{
+        font-size: 3rem;
+    }
+    .LandingTestimonies .right-lower{
+        margin-top: 4rem;
+    }
+}
+
+@media(min-width:425px){
+    .user img{
+        width: 4rem;
+        margin-right:1rem ;
+    }
+    .user-arrows-cont{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .arrows img{
+        width: 1.7rem;
+    }
+    .arrows{
+        justify-content: center;
+        align-items: center;
+    }
+    .stars img{
+        width: 10rem;
+    }
+    .stars{
+        margin-bottom: 4rem;
+    }
+
+}
+@media(min-width:768px){
+    /////////LANDING MAIN STARTS
+        .LandingTestimonies{
+            display: flex;
+            flex-direction: row;
+        }
+        .LandingTestimonies .left-upper,
+        .LandingTestimonies .right-lower{
+            width: 50%;
+            margin: 0 1rem;
+        }
+        .LandingTestimonies .left-upper{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .LandingTestimonies .title{
+            font-size: xxx-large;
+        }
+}
+
+@media(min-width:1024px){
+    .stars{
+        margin-bottom: 5rem;
+    }
+}
