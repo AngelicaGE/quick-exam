@@ -1,11 +1,14 @@
 import React from 'react'
 import {Link, NavLink } from 'react-router-dom'
+import Logo from "../rsc/images/logo-nav.PNG";
 
 const NavbarBrowser = ({tabs, user, signOut }) => {
 
   return (
     <div className='NavbarBrowser flex-row'>
         <div className='navbar-links'>
+        <img className='logo' src={Logo} alt="" />
+
         {
             tabs.map((tab) => (
                 <div key={tab}>

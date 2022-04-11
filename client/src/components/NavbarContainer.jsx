@@ -2,7 +2,6 @@ import React, { useState, useEffect, useContext } from 'react'
 import '../styles/Navbar.scss'
 import { UserContext } from "../context/UserContext";
 import { SUC } from '../helpers/globalVars';
-import Logo from '../rsc/images/logo-nav.PNG'
 import NavbarBrowser from './NavbarBrowser';
 import { NavbarMobile } from './NavbarMobile';
 import { navOptions } from '../helpers/globalVars';
@@ -43,11 +42,14 @@ useEffect( () => {
   return (
     <div className='Navbar'>
         <div className='nav-content flex-row'>
-            <img className='logo' src={Logo} alt="" />
+            
             {
-                isBiggerThanPhone? <NavbarBrowser tabs={navOptions} user={user} signOut={signOutFromAccount}></NavbarBrowser>
-                : <NavbarMobile tabs={navOptions} user={user} signOut={signOutFromAccount}></NavbarMobile>
+                //<img className='logo' src={Logo} alt="" />
+                //isBiggerThanPhone? <NavbarBrowser tabs={navOptions} user={user} signOut={signOutFromAccount}></NavbarBrowser>
+                //: <NavbarMobile tabs={navOptions} user={user} signOut={signOutFromAccount}></NavbarMobile>
             }
+            <NavbarMobile className="NavbarMobile" tabs={navOptions} user={user} signOut={signOutFromAccount}></NavbarMobile>
+            <NavbarBrowser className="NavbarBrowser"  tabs={navOptions} user={user} signOut={signOutFromAccount}></NavbarBrowser>
         </div>
         <hr />
     </div>
