@@ -1,0 +1,130 @@
+@import '_vars';
+
+.Footer{
+    background-color: $dark-blue;
+    color: white;
+}
+.Footer .footer-cont{
+    max-width: $max-width;
+    margin: auto;
+}
+.Footer a{
+    color: white;
+    font-weight: bold;
+}
+
+
+@media(min-width:300px){
+    .Footer .upper-left img{
+        width: 10rem;
+    }
+    .Footer .footer-cont{
+        padding: 3rem 0;
+    }
+    .Footer .upper-left .message{
+        margin: 1.5rem 0;
+        max-width: 20rem;
+    }
+    .Footer a{
+        margin-right: 5rem;
+        margin-bottom: 1rem;
+    }
+    .links-group{
+        display: flex;
+        flex-direction: column;
+    }
+    .Footer .stores-group{
+        display: flex;
+        flex-direction: row;
+    }
+    .Footer .stores-group img{
+        width: 10rem;
+    }
+    .Footer .upper{
+        display: flex;
+        flex-direction: column;
+    }
+    .Footer .upper,
+    .Footer .lower
+    .Footer .hr-cont{
+        display: flex;
+        flex-direction: column;
+        margin: 0 1rem;
+    }
+    .Footer .upper-right{
+        margin-top: 3rem;
+    }
+    .Footer .upper-right img:first-child{
+        margin-right: 1rem;
+    }
+    
+    .Footer .lower{
+        display: flex;
+        flex-direction: column;
+        margin: 0 1rem;
+    }
+    .Footer .lower img{
+        max-width:  20rem;
+        margin: 2rem 0;
+        cursor: pointer;
+    }
+    .Footer .lower .left-bottom{
+        order: 1;
+    }
+  
+}
+
+@media(min-width:768px){
+    .links-group{
+        display: flex;
+        flex-direction: row;
+    }
+    .Footer .stores-group{
+        display: flex;
+        flex-direction: column;
+    }
+    .Footer .upper-left img{
+        width: 15rem;
+    }
+    .Footer .stores-group img{
+        width: 12rem;
+    }
+    .Footer .upper{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between	;
+    }
+    .Footer .upper-right{
+        margin-top: 0;
+    }
+    .Footer .upper-right img:first-child{
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+    .Footer .lower{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 1rem;
+    }
+    .Footer .lower img{
+        max-width:  20rem;
+    }
+    .Footer .lower .left-bottom{
+        order: 0;
+    }
+}
+
+@media(min-width:1024px){
+
+    .Footer .footer-cont{
+        padding: 4rem 0;
+    }
+    .Footer .upper-left .message{
+        margin: 2.5rem 0;
+    }
+    .Footer a{
+        //margin-right: 3rem;
+    }
+}
